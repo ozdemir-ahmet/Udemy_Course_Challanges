@@ -27,7 +27,12 @@ public class Main {
             }
         });
 
+        Thread myThread = new Thread (() -> System.out.println("Runnable anonymous class"));
+
+        myThread.start();
+
         myRunnableThread2.start();
+
         anotherThread.interrupt();;
 
     }
