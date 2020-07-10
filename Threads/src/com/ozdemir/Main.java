@@ -24,6 +24,12 @@ public class Main {
             @Override
             public void run() {
                 super.run();
+                try {
+                    anotherThread.join();
+                    System.out.println("Another thread is terminated. So i am awake again");
+                } catch (InterruptedException e){
+                    System.out.println("RunnableThread2 is interrupted");
+                }
             }
         });
 
@@ -33,7 +39,7 @@ public class Main {
 
         myRunnableThread2.start();
 
-        anotherThread.interrupt();;
+ //       anotherThread.interrupt();;
 
     }
 }
